@@ -1,0 +1,11 @@
+.left {
+    padding: 1rem 2rem;
+    font-size: 50px;
+    font-weight: bolder;
+}
+.leftsection button{
+    background-color: blue;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}

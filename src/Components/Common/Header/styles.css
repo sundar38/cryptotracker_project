@@ -1,0 +1,48 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(159, 128, 128);
+    color: white;
+    font-size: 1rem;
+}
+.right{
+    display: flex;
+    flex-direction: row;
+
+}
+.right .links{
+    padding: 20px 10px;
+    text-decoration: none;
+    color: white;
+}
+.logo{
+    padding: 10px;   
+    text-decoration: none;
+    color: white;
+
+}
+.drawer{
+    display: none;
+}
+@media screen and (max-width: 800px) {
+        .right{
+            display: none;
+        }
+        .drawer{
+            display: block;
+        }
+        .sidelinks{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .sidelinks a{
+            padding: 20px 10px;
+            text-decoration: none;
+            background-color: black;             
+        }
+        
+
+        
+}
