@@ -1,0 +1,16 @@
+.searchfix{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0.8rem;
+}
+.symbol{
+    position: relative;
+    left: 2rem;
+}
+.searchfix input{
+    width: 80%;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    
+}
