@@ -6,8 +6,9 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import { useState } from 'react';
 import "./style.css"
-import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
-import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
+
+import Grids from '../Grids';
+import Lists from '../Lists';
 export default function TabsComponent({coins}) {
   const [value, setValue] =useState('1');
 
@@ -26,66 +27,12 @@ export default function TabsComponent({coins}) {
           </TabList>
      
         <TabPanel value="1">
-            <div className='totalcoins'>
-            {
-                coins.map((coin, index)=> {
-                  return( 
-                    <div >
-                        <div className='eachcoin'>
-                            <div className='section'>
-                            <img src={coin.image} alt="img" className='image'></img>
-                            <div className='text'>
-                                <p className='symbol'>{coin.symbol}</p>
-                                <p className='names'>{coin.name}</p>
-                            </div>
-                            </div>
-                            {coin.price_change_percentage_24h>0 ?
-                                <div className='numbergroup'>
-                                  <p className='percent greencol'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
-                                  <div><TrendingUpRoundedIcon/></div>
-                                </div>
-                                :
-                                <div className='numbergroup'>
-                                  <p className='percent redcol'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
-                                  <div><TrendingDownRoundedIcon/></div>
-                                </div>
-                            }                            
-                            <div >
-                                <p>Total Volume: {coin.total_volume}</p>
-                                <p>Market Cap: ${coin.market_cap}</p>
-                              </div>
-                        </div>
-                    </div>
-                  )})
-            }
-            </div>
+            <Grids coin={coins}/>
+            
         </TabPanel>
         <TabPanel value="2">
-            <div className='eachlists'>
-            {
-                
-                coins.map((coin, index)=> {
-                  return(
-                    <li className='eachcoindesc'>
-                      <img src={coin.image} alt="img" className='image'></img>
-                    <span className='symbol'>{coin.symbol}</span>
-                      <span className='names'>{coin.name}</span >
-                      <span>{coin.id}</span>
-                      {coin.price_change_percentage_24h>0 ?
-                                <div className='numbergroup'>
-                                  <p className='percent greencol'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
-                                  <div><TrendingUpRoundedIcon/></div>
-                                </div>
-                                :
-                                <div className='numbergroup'>
-                                  <p className='percent redcol'>{coin.price_change_percentage_24h.toFixed(2)}%</p>
-                                  <div><TrendingDownRoundedIcon/></div>
-                                </div>
-                            } 
-                    </li>
-                )})
-            }
-            </div>
+            <Lists coin={coins}/>
+            
             </TabPanel>
         
       </TabContext>

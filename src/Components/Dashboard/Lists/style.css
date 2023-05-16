@@ -1,0 +1,30 @@
+.eachcoindesc{
+    border: 1px solid black;
+    width: 100vw;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.eachcoindesc span{
+    padding: 1rem 1.5rem;
+}
+.percent{
+    border: 1px solid green;
+    border-radius: 1rem;
+    padding: 0.5rem 2.5rem;
+    width: 40px;
+    margin-left: 1rem;
+}
+.greencol{
+    border: 2px solid green;
+    border-radius: 1rem;
+}
+.redcol{
+    border: 2px solid red;
+    border-radius: 1rem;
+}
+.numbergroup{
+    display: flex;
+    justify-content: flex-start;
+}

@@ -1,0 +1,25 @@
+.eachcoin{
+    border: 1px solid black;
+    margin-top: 0.5rem;
+    width: 300px;
+    height: 300px;
+    
+}
+.eachcoin .section{
+    display: flex;
+    padding: 2rem;
+    justify-content: flex-start;
+}
+.image{
+    height: 4rem;
+}
+.totalcoins{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+}
+.symbol{
+    text-transform: uppercase;
+    font-weight: 300;
+}

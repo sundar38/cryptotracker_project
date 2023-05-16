@@ -1,6 +1,6 @@
 import React from 'react'
 import "./styles.css"
-import TemporaryDrawer from './TemporaryDrawer'
+
 import { Link } from 'react-router-dom'
 
 function Header() {
@@ -15,9 +15,9 @@ function Header() {
         <Link to={"/watchlist"} className='links'>Watchlist</Link>
         <Link to={"/dashboard"} className='links'>DashBoard</Link>
       </div>
-      <div className='drawer'>
+      {/* <div className='drawer'>
       <TemporaryDrawer/>
-      </div>
+      </div> */}
     </div>
   )
 }
