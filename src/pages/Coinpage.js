@@ -50,8 +50,10 @@ import { convertintoobject } from '../functions/convertintoobject';
                         <div><TrendingDownRoundedIcon/></div>
                     </div>
                 }  
-                </li>                
-        </div>     )
+            </li> 
+            <h1>{coindata.description.en}</h1>               
+        </div>     
+        )
  }
     
    
