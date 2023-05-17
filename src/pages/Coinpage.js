@@ -16,6 +16,7 @@ import { convertdate } from '../functions/convertdate';
     // const [coininfo, setCoininfo]=useState({})
     const [loading, setLoading]=useState(true)
     const [chartData, setChartData]= useState({datasets: []})
+    const [days, setDays]=useState(25)
 
     useEffect(()=>async ()=>{
         if(id){
@@ -25,7 +26,7 @@ import { convertdate } from '../functions/convertdate';
             setLoading(false) 
             
             
-            const response=await axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`)
+            const response=await axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`)
             console.log("chart response is", response.data);
             const price= response.data.prices
             console.log(price);
