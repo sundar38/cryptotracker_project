@@ -4,30 +4,55 @@ import { useParams } from 'react-router-dom'
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import Header from '../Components/Common/Header'
-import "../Components/Dashboard/TabsComponent/style.css"
+import "../Components/Dashboard/Lists/style.css"
 import Lists from '../Components/Dashboard/Lists';
 import { convertintoobject } from '../functions/convertintoobject';
+import Linechart from '../Components/Coin/LineChart';
+import { convertdate } from '../functions/convertdate';
 
  function Coinpage() {
     const {id}=useParams()
     const [coindata, setCoindata]=useState()
-    const [coininfo, setCoininfo]=useState({})
+    // const [coininfo, setCoininfo]=useState({})
     const [loading, setLoading]=useState(true)
+    const [chartData, setChartData]= useState({datasets: []})
+
     useEffect(()=>async ()=>{
         if(id){
             const res=await axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
             console.log(res.data);
             setCoindata(res.data)
-            setLoading(false)        
+            setLoading(false) 
+            
+            
+            const response=await axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7&interval=daily`)
+            console.log("chart response is", response.data);
+            const price= response.data.prices
+            console.log(price);
+
+            setChartData({
+                labels: price.map((eachprice)=> convertdate(eachprice[0])),
+          datasets: [
+            {      
+              data: price.map((eachprice)=> eachprice[1]),
+              borderColor: "red",
+              backgroundColor: "transparent",
+              yAxisID: 'y',
+            },
+            
+          ]
+            })
         }    
     },[id])
     //const image=`${coindata.image.small}`
     //console.log(coindata);
-
+  
+    
     
   return (
     <div>
     <Header/>
+    
     {loading?(<h1>hi</h1>):(<div className='eachlists'>                         
             <li className='eachcoindesc'>      
                 <span><img src={coindata.image.large} className='image'></img></span>     
@@ -51,7 +76,9 @@ import { convertintoobject } from '../functions/convertintoobject';
                     </div>
                 }  
             </li> 
-            <h1>{coindata.description.en}</h1>               
+            <h1>{coindata.id}</h1>
+            <p className='anchor' dangerouslySetInnerHTML={{__html:coindata.description.en}}></p>  
+            <div><Linechart chartData={chartData}/>    </div>           
         </div>     
         )
  }

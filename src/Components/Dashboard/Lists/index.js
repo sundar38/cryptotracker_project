@@ -2,13 +2,16 @@ import React from 'react'
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import "./style.css"
+import { Link } from 'react-router-dom';
 function Lists({coin}) {
   return (
      <div className='eachlists'>
             {                
                 coin.map((coin, index)=> {
                   return(
+                   
                     <li className='eachcoindesc'>
+                       
                       <img src={coin.image} alt="img" className='image'></img>
                     <span className='symbol'>{coin.symbol}</span>
                       <span className='names'>{coin.name}</span >
@@ -24,7 +27,9 @@ function Lists({coin}) {
                                   <div><TrendingDownRoundedIcon/></div>
                                 </div>
                             } 
+                            
                     </li>
+                    
                 )})
             }
             </div> 

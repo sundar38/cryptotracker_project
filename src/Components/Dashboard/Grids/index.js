@@ -2,12 +2,16 @@ import React from 'react'
 import TrendingDownRoundedIcon from '@mui/icons-material/TrendingDownRounded';
 import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import "./style.css"
+import { Link } from 'react-router-dom';
 function Grids({coin}) {
     console.log(coin);
+    console.log(coin.id);
   return (
+      
      <div className='totalcoins'>
             {
                 coin.map((coin, index)=> {
+                  
                   return( 
                     <div >
                         <div className='eachcoin'>
@@ -35,9 +39,11 @@ function Grids({coin}) {
                               </div>
                         </div>
                     </div>
-                  )})
+                  )
+                  })
             }
             </div> 
+           
   )
 }
 

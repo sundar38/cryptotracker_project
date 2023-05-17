@@ -28,3 +28,7 @@
     display: flex;
     justify-content: flex-start;
 }
+.anchor a{
+    color: blue;
+    text-decoration: none;
+}
