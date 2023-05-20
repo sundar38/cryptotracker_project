@@ -32,3 +32,6 @@
     color: blue;
     text-decoration: none;
 }
+.dayselect{
+    display: flex;    
+}
