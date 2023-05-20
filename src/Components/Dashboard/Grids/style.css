@@ -6,6 +6,10 @@
     text-decoration: none;
     
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 .eachcoin .section{
     display: flex;
     padding: 2rem;

@@ -9,7 +9,7 @@ function Lists({coin}) {
             {                
                 coin.map((coin, index)=> {
                   return(
-                   
+                    <Link to={`/${coin.id}`}>
                     <li className='eachcoindesc'>
                        
                       <img src={coin.image} alt="img" className='image'></img>
@@ -29,6 +29,7 @@ function Lists({coin}) {
                             } 
                             
                     </li>
+                    </Link>
                     
                 )})
             }
