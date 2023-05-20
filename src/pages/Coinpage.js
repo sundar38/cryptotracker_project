@@ -6,7 +6,7 @@ import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import Header from '../Components/Common/Header'
 import "../Components/Dashboard/Lists/style.css"
 import Lists from '../Components/Dashboard/Lists';
-import { convertintoobject } from '../functions/convertintoobject';
+
 import Linechart from '../Components/Coin/LineChart';
 import { convertdate } from '../functions/convertdate';
 import Selectdays from '../Components/Coin/LineChart/Selectdays';
