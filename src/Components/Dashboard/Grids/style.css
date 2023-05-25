@@ -1,8 +1,8 @@
 .eachcoin{
     border: 1px solid black;
     margin-top: 0.5rem;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     text-decoration: none;
     
 }
@@ -12,11 +12,11 @@ a{
 }
 .eachcoin .section{
     display: flex;
-    padding: 2rem;
+    padding: 0.5rem;
     justify-content: flex-start;
 }
 .image{
-    height: 4rem;
+    height: 3.5rem;
 }
 .totalcoins{
     display: flex;
@@ -26,5 +26,8 @@ a{
 }
 .symbol{
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 200;
+}
+.text{
+    padding-left: 0.5rem;
 }

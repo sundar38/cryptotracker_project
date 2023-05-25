@@ -20,24 +20,27 @@ import Togglecomp from '../Components/Coin/LineChart/Togglecomp';
     const [chartData, setChartData]= useState({datasets: []})
     const [days, setDays]=useState(7)
     console.log(days);
+    console.log(id);
+
+    const retreivecoindata= async (id)=>{
+    if(id){
+      const res=await axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
+      console.log(res.data);
+      setCoindata(res.data)
+      setLoading(false)            
+    }
+  } 
     
 
-    useEffect(()=>async ()=>{
-        if(id){
-            const res=await axios.get(`https://api.coingecko.com/api/v3/coins/${id}`)
-            console.log(res.data);
-            setCoindata(res.data)
-            setLoading(false) 
-            
-            
-        }    
+    useEffect(()=>{
+           retreivecoindata(id)
     },[id])
     
     const dayschange= async (e)=>{
         setDays(e.target.value)
    }
-    useEffect(()=> async()=> {
-        console.log(days);
+   const settingchart=async ()=>{
+          console.log(days);
             const response=await axios.get(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=${days}&interval=daily`)
             console.log("chart response is", response.data);
             const price= response.data.prices
@@ -55,14 +58,16 @@ import Togglecomp from '../Components/Coin/LineChart/Togglecomp';
             
           ]
             })
+          }
+    useEffect(()=> {
+            settingchart()
     },[days] )
   
-    
+  
     
   return (
     <div>
-    <Header/>
-    
+    <Header/>   
     
     {loading?(<h1>hi</h1>):(<div className='eachlists'>                         
             <li className='eachcoindesc'>      

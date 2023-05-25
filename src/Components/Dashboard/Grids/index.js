@@ -34,7 +34,7 @@ function Grids({coin}) {
                                   <div><TrendingDownRoundedIcon/></div>
                                 </div>
                             }                            
-                            <div >
+                            <div className='text'>
                                 <p>Total Volume: {coins.total_volume}</p>
                                 <p>Market Cap: ${coins.market_cap}</p>
                               </div>
