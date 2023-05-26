@@ -5,7 +5,25 @@
 }
 .leftsection button{
     background-color: blue;
-    margin: 1rem;
+    
     border-radius: 1rem;
     padding: 0.5rem;
+    margin: 1.5rem;
+   
+}
+.leftsection button a{
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+.cryptoimg{    
+    width: 350px;
+    position: absolute;
+
+    top: 175px;
+    right: 50px;
+}
+.desc{
+    padding: 2rem;
+    font-size: 20px;
 }

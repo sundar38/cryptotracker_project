@@ -11,8 +11,7 @@ function Header() {
       </a>
       <div className='right'>
         <Link to="/" className='links'>Home</Link>        
-        <Link to={"/compare"} className='links'>Compare</Link>
-        <Link to={"/watchlist"} className='links'>Watchlist</Link>
+        
         <Link to={"/dashboard"} className='links'>DashBoard</Link>
       </div>
       {/* <div className='drawer'>

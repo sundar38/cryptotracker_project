@@ -92,14 +92,16 @@ import Togglecomp from '../Components/Coin/LineChart/Togglecomp';
                     </div>
                 }  
             </li> 
+            <div className='charrtanddesc'>
             <h1>{coindata.id}</h1>
             <p className='anchor' dangerouslySetInnerHTML={{__html:coindata.description.en}}></p>
             <div className='dayselect'>
-            <p>Select number of days</p>  
+            <p className='selectday'>Select number of days  </p>  
             <Selectdays days={days} dayschange={dayschange}/>
             </div>
-            <Togglecomp/>
-            <div><Linechart chartData={chartData}/>    </div>           
+           
+            <div><Linechart chartData={chartData}/>    </div> 
+            </div>          
         </div>     
         )
  }

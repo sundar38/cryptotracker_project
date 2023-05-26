@@ -2,8 +2,9 @@
     border: 1px solid black;
     margin-top: 0.5rem;
     width: 250px;
-    height: 250px;
+    height: 230px;
     text-decoration: none;
+    
     
 }
 a{
@@ -22,12 +23,25 @@ a{
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
+    
+    /* justify-content: center; */
 
 }
 .symbol{
     text-transform: uppercase;
     font-weight: 200;
 }
-.text{
+.eachcoin .text{
+   display: flex;
+   flex-direction: column;
+}
+.eachcoin .text .names{
+    padding: 1rem;
+}
+.textsec{
+    display: flex;
+    flex-direction: column;
     padding-left: 0.5rem;
+    font-size: 13px;
 }

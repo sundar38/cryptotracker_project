@@ -27,8 +27,13 @@ function Lists({coin}) {
                                   <div><TrendingDownRoundedIcon/></div>
                                 </div>
                             } 
+                         <div className='textsec2'>
+                                <div>Total Vol: {coin.total_volume}</div>
+                                <div> Market Cap: ${coin.market_cap}</div>
+                              </div> 
                             
                     </li>
+                    
                     </Link>
                     
                 )})

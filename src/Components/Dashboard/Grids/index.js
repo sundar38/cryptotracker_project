@@ -19,8 +19,8 @@ function Grids({coin}) {
                             <div className='section'>
                             <img src={coins.image} alt="img" className='image'></img>
                             <div className='text'>
-                                <p className='symbol'>{coins.symbol}</p>
-                                <p className='names'>{coins.name}</p>
+                                <div className='symbol'>{coins.symbol}</div>
+                                <div className='names'>{coins.name}</div>
                             </div>
                             </div>
                             {coin.price_change_percentage_24h>0 ?
@@ -34,9 +34,9 @@ function Grids({coin}) {
                                   <div><TrendingDownRoundedIcon/></div>
                                 </div>
                             }                            
-                            <div className='text'>
-                                <p>Total Volume: {coins.total_volume}</p>
-                                <p>Market Cap: ${coins.market_cap}</p>
+                            <div className='textsec'>
+                                <div>Total Volume: {coins.total_volume}</div>
+                                <div>Market Cap: ${coins.market_cap}</div>
                               </div>
                         </div>
                     </div>
